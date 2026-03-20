@@ -20,31 +20,49 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Scam Shield</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<div>
+    <img class="logo" src="img/logo.svg" alt="Scam Shield Logo" srcset="">
+</div>
+
+    <div class="home">
+        <div>
+            <img class="h-logo" src="img/logo.svg" alt="Scam Shield Logo" srcset="">
         </div>
-        <script src="cordova.js"></script>
+        <div>
+            <p class="text-center ">Is this message safe? <br> Upload a screenshot to check</p>
+            <div class="upload-area rounded-4 shadow-sm card">
+                <div class="mi_camera">
+                        <input type="file" id="image-upload" accept="image/*">
+                    <img src="img/mi_camera.svg" alt="Upload Placeholder" srcset="">
+                </div>
+            </div>
+            <label for="image-upload" class="m-2" >Click or drag and drop an image here</label>
+        </div>
+        <div class="mb-4 mt-5 text-center" >
+            <h6>NOTICE</h6>
+            <p>your screenshot is analyzed securely No personal data is stored</p>
+        </div>
+        <footer class="bg-secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center text-white py-3">
+                        &copy; 2024 Scam Shield. All rights reserved.
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    </div>
         <script src="js/index.js"></script>
     </body>
 </html>
