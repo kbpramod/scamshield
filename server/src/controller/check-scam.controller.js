@@ -1,29 +1,30 @@
+import Logger from "../utils/logger.js";
+import { checkScamService } from "../services/check-scam.service.js";
 
+const logger = new Logger("CheckScamController");
 
-exports.checkScam = async (req, res) => {
+export const checkScam = async (req, res) => {
   try {
-    const { image } = req.body;
+    const file = req.file;
 
-    if (!image) {
+    if (!file) {
       return res.status(400).json({
         success: false,
         message: "Image is required"
       });
     }
 
-    const mockResult = {
-      status: "yellow",
-      confidence: 0.78,
-      reason: "Message contains urgency and suspicious payment request"
-    };
+    const buffer = file.buffer;
+
+    const result = await checkScamService(buffer);
 
     return res.status(200).json({
       success: true,
-      data: mockResult
+      data: result
     });
 
   } catch (error) {
-    console.error("Error in checkScam:", error);
+    logger.error("Error in checkScam:", error);
 
     return res.status(500).json({
       success: false,
