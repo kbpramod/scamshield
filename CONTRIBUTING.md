@@ -54,6 +54,14 @@ cd project-root
 
 ---
 
+### 🌿 Create and switch to a new branch
+
+```bash
+git checkout -b your-branch-name
+```
+
+---
+
 ## 🔧 Backend Setup (Node.js)
 
 ### Navigate to server
@@ -75,7 +83,6 @@ Create a `.env` file:
 ```env
 PORT=3000
 DB_URL=your_database_url
-JWT_SECRET=your_secret
 ```
 
 ### Run backend
