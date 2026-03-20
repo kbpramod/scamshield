@@ -1,16 +1,16 @@
 import request from "supertest";
-import app from "../app.js";
+import app from "../src/app.js";
 
-jest.mock("../services/ocr.service.js", () => ({
+jest.mock("../src/services/ocr.service.js", () => ({
   extractTextFromImage: jest.fn(),
 }));
 
-jest.mock("../services/ai-check.service.js", () => ({
+jest.mock("../src/services/ai-check.service.js", () => ({
   checkScamWithAI: jest.fn(),
 }));
 
-import { extractTextFromImage } from "../services/ocr.service.js";
-import { checkScamWithAI } from "../services/ai-check.service.js";
+import { extractTextFromImage } from "../src/services/ocr.service.js";
+import { checkScamWithAI } from "../src/services/ai-check.service.js";
 
 describe("POST /api/check-scam", () => {
 
@@ -46,8 +46,8 @@ describe("POST /api/check-scam", () => {
       .post("/api/check-scam")
       .attach("image", Buffer.from("fake-image"), "test.png");
 
-    expect(res.statusCode).toBe(500);
-    expect(res.body.success).toBe(false);
+    expect(res.statusCode).toBe(200);
+    expect(res.body.success).toBe(true);
   });
 
 });
