@@ -1,0 +1,33 @@
+{
+  "name": "com.bincom.scamshield",
+  "displayName": "ScamShield",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cordova run browser",
+    "browser": "cordova run browser",
+    "android": "cordova run android",
+    "build": "cordova build",
+    "prepare": "cordova prepare",
+    "clean": "cordova clean"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^15.0.0",
+    "cordova-browser": "^7.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "scamshield": "file:.."
+  }
+}
