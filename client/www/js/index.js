@@ -1,29 +1,44 @@
-/**
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+const uploadArea = document.querySelector('.upload-area');
+const fileInput = document.getElementById('image-upload');
 
-        http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
-*/
+uploadArea.addEventListener('click', () => {
+    fileInput.click();
+});
 
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+fileInput.addEventListener('change', async (event) => {
+    const file = event.target.files[0]; 
+    if (!file) return; 
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+    
+    const imgPreview = document.querySelector('.image-preview');
+    if (imgPreview) {
+        imgPreview.src = URL.createObjectURL(file);
+    }
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
-}
+    
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+        // this will Send image to pramod's API
+        const response = await fetch("http://localhost:5000/api/check-scam", {
+            method: "POST",
+            body: formData,
+        });
+
+        //  after the result from backend
+        const result = await response.json();
+
+        //  Show result to user
+        if (result.safe) {
+            alert("✅ The content is safe!");
+            // 
+        } else {
+            alert("⚠️ The content is not safe and might be a scam!");
+        }
+    } catch (error) {
+        console.error("Error uploading image:", error);
+        alert("❌ Could not check the image right now.");
+    }
+});
