@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function hideAllModals() {
         analysisPage.style.display = 'none';
         resultModals.forEach(m => m.style.display = 'none');
+        modal.style.display = 'none';
         pageDim.style.display = 'none';
         fileInput.disabled = false;
         fileInput.value = '';
@@ -38,12 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const file = event.target.files[0];
         if (!file) return;
 
-        pageDim.style.display = 'none';
+        pageDim.style.display = 'block';
         analysisPage.style.display = 'block';
 
         // Show uploaded image preview
         if (imgPreview) {
             imgPreview.src = URL.createObjectURL(file);
+            imgPreview.style.objectFit = 'cover';
+            imgPreview.style.width = '100%';
+            imgPreview.style.height = '80%';
         }
 
         // Disable input while analyzing
@@ -65,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         yellow.style.display = 'block';
     }
 }
-
         try {
             const response = await fetch("http://3.81.248.233/api/check-scam", {
                 method: "POST",
@@ -76,23 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // 1. Hide the "Analyzing" screen first
     analysisPage.style.display = 'none';
     modal.style.display = 'block'
+    showCorrectResult(result);
+     btn.addEventListener('click', hideAllModals());
     console.log (result)
-    if (result.safe === true) {
-        green.style.display = 'block';
-    } else if (result.safe === false) {
-        red.style.display = 'block';
-    } else {
-        yellow.style.display = 'block';
-    }
-
+    
         } catch (error) {
             console.error("Error uploading image:", error);
-            const resultText = document.createElement('p');
+            let resultText = document.createElement('p');
             resultText.style.color = 'red';
             resultText.style.marginTop = '20px';
             resultText.textContent = "❌ Could not check the image right now.";
             analysisPage.appendChild(resultText);
-            resultText = ''
         } finally {
             fileInput.disabled = false;
         }

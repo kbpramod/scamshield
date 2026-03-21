@@ -54,13 +54,11 @@ animation: fadeOut 2s ease-in-out 2s forwards;
 
 
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
-        display: none;
     }
-    100% {
+    to {
         opacity: 1;
-        display: flex;
     }
 }
 
@@ -109,7 +107,7 @@ animation: fadeOut 2s ease-in-out 2s forwards;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
-    margin-top: 20px auto;
+    margin-top: 20px;
 }
 
 @keyframes spin {
