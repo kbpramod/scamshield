@@ -1,13 +1,40 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.bincom.scamshield" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.bincom.scamshield"
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
     <name>ScamShield</name>
+
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        ScamShield mobile application for detecting scam messages from screenshots.
     </description>
+
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+        ScamShield Team
     </author>
+
     <content src="index.html" />
+    
+    <!-- Allow internet access -->
+    <access origin="*" />
+
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <!-- Android specific configuration -->
+<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
+<platform name="android">
+    <edit-config file="app/src/main/AndroidManifest.xml"
+        mode="merge"
+        target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+</platform>
+
 </widget>
