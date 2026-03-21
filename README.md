@@ -36,6 +36,6 @@ To create a safer digital environment where vulnerable users, especially senior 
 
 ### 🚨 The problem
 
-With golbal scam lossess exceeding $442 billion and 86% of crypto-fraud victims are over 60, elders need a platform which is simple, visual way to verify suspicious messages.
+With global scam lossess exceeding $442 billion and 86% of crypto-fraud victims are over 60, elders need a platform which is simple, visual way to verify suspicious messages.
 
 Source: GASA Global State of Scams Report; FBI IC3 Crypto Assets Report; FBI IC3 Internet Crime Report
