@@ -65,8 +65,12 @@
        </div>
 
     </div>
-    
-<div class="home" id="Analysis_Page"style="display: none;">
+    <!-- Dim overlay --> 
+     <div id="overlay"
+      style=" display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; /* behind the analysis page but above home page */ ">
+    </div> <!-- Analysis Page --> 
+    <div id="Master_Modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px;  height: 90%; background: white; z-index: 1000; padding: 20px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); overflow-y: auto;"></div>
+    <div id="Analysis_Page" style=" display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 90%; background: white; z-index: 1000; /* above overlay */ padding: 20px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); ">
         <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
         <div class="mt-5">
             <p class="text-center ">Analyzing your screenshots for scams...</p>
@@ -89,6 +93,7 @@
                     <div class="col text-center text-white py-3">
                         &copy; 2024 Scam Shield. All rights reserved.
                     </div>
+                </div>
                 </div>
             </div>
     </footer>
@@ -177,6 +182,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
     </div>
 

@@ -34,22 +34,22 @@ animation: fadeOut 2s ease-in-out 2s forwards;
 }
 
 #Analysis_Page {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+    
 }
 
 #ScamRed {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+    
 }
 
 
 
 #ScamYellow {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+
 }
 
 
 #SafeGreen{
-    animation: fadeIn 2s ease-in-out 4s forwards;
+
 }
 
 
@@ -119,5 +119,3 @@ animation: fadeOut 2s ease-in-out 2s forwards;
     75% { transform: rotate(270deg); }
     100% { transform: rotate(360deg); }
 }
-
-
