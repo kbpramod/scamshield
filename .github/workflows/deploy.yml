@@ -1,0 +1,35 @@
+name: Deploy Backend to EC2
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            export PATH=$PATH:/usr/local/bin
+
+            echo "📂 Navigating to project..."
+            cd /home/ec2-user/scamshield
+
+            echo "📥 Pulling latest code..."
+            git pull origin master
+
+            echo "📦 Installing backend dependencies..."
+            cd server
+            npm install
+
+            echo "🔄 Restarting backend..."
+            pm2 reload all
+
+            echo "✅ Backend deployed successfully"
