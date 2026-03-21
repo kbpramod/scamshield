@@ -33,6 +33,7 @@ fileInput.addEventListener('change', async (event) => {
         //  Show result to user
         if (result.safe) {
             alert("✅ The content is safe!");
+            // 
         } else {
             alert("⚠️ The content is not safe and might be a scam!");
         }

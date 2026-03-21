@@ -33,6 +33,26 @@ animation: fadeOut 2s ease-in-out 2s forwards;
     opacity: 0;
 }
 
+#Analysis_Page {
+    animation: fadeIn 2s ease-in-out 4s forwards;
+}
+
+#ScamRed {
+    animation: fadeIn 2s ease-in-out 4s forwards;
+}
+
+
+
+#ScamYellow {
+    animation: fadeIn 2s ease-in-out 4s forwards;
+}
+
+
+#SafeGreen{
+    animation: fadeIn 2s ease-in-out 4s forwards;
+}
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -74,3 +94,30 @@ animation: fadeOut 2s ease-in-out 2s forwards;
 #image-upload {
     display: none;
 }
+
+.image-preview {
+    margin-top: 20px;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.spinner {
+    border: 4px dotted #ccc;
+    border-top: 4px solid #3498db;
+    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-top: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
+
+

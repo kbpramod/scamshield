@@ -52,7 +52,8 @@
             <h6>NOTICE</h6>
             <p>your screenshot is analyzed securely No personal data is stored</p>
         </div>
-        <footer class="bg-secondary">
+       <div  class="bg-secondary  w-100" style="margin-bottom: 0px;">
+         <footer>
             <div class="container">
                 <div class="row">
                     <div class="col text-center text-white py-3">
@@ -61,8 +62,124 @@
                 </div>
             </div>
     </footer>
+       </div>
 
     </div>
-        <script src="js/index.js"></script>
+    
+<div class="home" id="Analysis_Page"style="display: none;">
+        <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
+        <div class="mt-5">
+            <p class="text-center ">Analyzing your screenshots for scams...</p>
+            <div class="upload-area rounded-4 shadow-sm card">
+                <div class="mi_camera">
+                        <input type="file" id="image-upload" accept="image/*">
+                    <img src="img/mi_camera.svg" alt="Upload Placeholder" srcset="">
+                </div>
+            </div>
+            <label for="image-upload" class="m-2 text-muted" > <i class="spinner me-2"></i> Analyzing text message</label>
+        </div>
+        <div class="mb-4 mt-5 text-center" >
+            <p>Scanning for scams patterns...</p>
+            <p>Detecting suspicious elements...</p>
+
+        <div  class="bg-secondary  w-100" style="margin-bottom: 0px;">
+         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center text-white py-3">
+                        &copy; 2024 Scam Shield. All rights reserved.
+                    </div>
+                </div>
+            </div>
+    </footer>
+    </div>
+
+</div>
+
+<div class="home" id="ScamRed" style="display: none;">
+        <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
+        <h2 class="mt-2 mb-2 text-danger">THIS IS A SCAM</h2>
+        <div>
+            <div>
+                <div class="RED_light text-center">
+                    <img src="img/RED.svg" alt="RED_light">
+                </div>
+            </div>
+            <p for="image-upload" class="mt-3 text-danger" > This message shows patterns commonly used in scam attempts</p>
+        </div>
+        <div class="mb-4 mt-5 text-center" >
+            <p class="text-danger">Do not <strong>click</strong> any links or send money</p>
+            <button class="btn btn-primary btn-outline-dark rounded-4 px-4">Go Home</button>
+    
+        <div  class="bg-secondary  w-100" style="margin-bottom: 0px;">
+         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center text-white py-3">
+                        &copy; 2024 Scam Shield. All rights reserved.
+                    </div>
+                </div>
+            </div>
+    </footer>
+    </div>
+
+</div>
+
+<div class="home" id="ScamYellow" style="display: none;">
+        <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
+        <h2 class="mt-2 mb-2 text-warning">BE CAREFUL</h2>
+        <div>
+            <div>
+                <div class="YELLOW_light text-center">
+                    <img src="img/YELLOW.svg" alt="WARNING_light">
+                </div>
+            </div>
+            <p class="mt-3 text-warning" > We could not confirm if this message is safe.</p>
+                        <p class="mt-2 text-warning">If unsure ask a trusted friend or family member for advice.</p>
+        </div>
+        <div class="mb-4 mt-5 text-center" >
+            <button class="btn btn-primary btn-outline-dark rounded-4 px-4">Go Home</button>
+    
+        <div  class="bg-secondary  w-100" style="margin-bottom: 0px;">
+         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center text-white py-3">
+                        &copy; 2024 Scam Shield. All rights reserved.
+                    </div>
+                </div>
+            </div>
+    </footer>
+    </div>
+
+</div>
+
+<div class="home" id="SafeGreen" style="display: none;">
+        <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
+        <h2 class="mt-2 mb-2 text-success">THIS MESSAGE IS SAFE</h2>
+        <div>
+            <div>
+                <div class="GREEN_light">
+                    <img src="img/GREEN.svg" alt="GREEN_light">
+                </div>
+            </div>
+            <p class="mt-3 text-success" > This message does not appear to contain scam patterns.</p>
+        </div>
+        <div class="mb-4 mt-5 text-center" >
+            <button class="btn btn-primary btn-outline-secondary  rounded-4 px-4">Check Another Message</button>
+        </div>
+        <div  class="bg-secondary  w-100" style="margin-bottom: 0px;">
+         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center text-white py-3">
+                        &copy; 2024 Scam Shield. All rights reserved.
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <script src="js/index.js"></script>
     </body>
 </html>
