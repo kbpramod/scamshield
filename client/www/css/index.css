@@ -34,33 +34,31 @@ animation: fadeOut 2s ease-in-out 2s forwards;
 }
 
 #Analysis_Page {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+    
 }
 
 #ScamRed {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+    
 }
 
 
 
 #ScamYellow {
-    animation: fadeIn 2s ease-in-out 4s forwards;
+
 }
 
 
 #SafeGreen{
-    animation: fadeIn 2s ease-in-out 4s forwards;
+
 }
 
 
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
-        display: none;
     }
-    100% {
+    to {
         opacity: 1;
-        display: flex;
     }
 }
 
@@ -109,7 +107,7 @@ animation: fadeOut 2s ease-in-out 2s forwards;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
-    margin-top: 20px auto;
+    margin-top: 20px;
 }
 
 @keyframes spin {
@@ -119,5 +117,3 @@ animation: fadeOut 2s ease-in-out 2s forwards;
     75% { transform: rotate(270deg); }
     100% { transform: rotate(360deg); }
 }
-
-

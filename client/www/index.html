@@ -65,15 +65,18 @@
        </div>
 
     </div>
+    <!-- Dim overlay --> 
+     <div id="overlay"
+      style=" display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; /* behind the analysis page but above home page */ ">
+    </div> <!-- Analysis Page --> 
     
-<div class="home" id="Analysis_Page" style="display: none;">
+    <div id="Analysis_Page" style=" display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 90%; background: white; z-index: 1000; /* above overlay */ padding: 20px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); ">
         <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
         <div class="mt-5">
             <p class="text-center ">Analyzing your screenshots for scams...</p>
             <div class="upload-area rounded-4 shadow-sm card">
                 <div class="mi_camera">
-                        <input type="file" id="image-upload" accept="image/*">
-                    <img src="img/mi_camera.svg" alt="Upload Placeholder" srcset="">
+                    <img id="image-preview" src="img/mi_camera.svg" alt="Upload Placeholder" srcset="">
                 </div>
             </div>
             <label for="image-upload" class="m-2 text-muted" > <i class="spinner me-2"></i> Analyzing text message</label>
@@ -90,12 +93,13 @@
                         &copy; 2024 Scam Shield. All rights reserved.
                     </div>
                 </div>
+                </div>
             </div>
     </footer>
     </div>
 </div>
-
-<div class="home" id="ScamRed" style="display: none;">
+<div class="py-4" id="Master_Modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px;  height: 90%; z-index: 1000; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); background-color: #f5f5f5; padding-top: 30px auto; overflow-y: auto;">
+<div class="home py-4 px-4" id="ScamRed" style="display: none;">
         <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
         <h2 class="mt-2 mb-2 text-danger">THIS IS A SCAM</h2>
         <div>
@@ -125,7 +129,7 @@
 
 </div>
 
-<div class="home" id="ScamYellow" style="display: none;">
+<div class="home py-4 px-4" id="ScamYellow" style="display: none;">
         <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
         <h2 class="mt-2 mb-2 text-warning">BE CAREFUL</h2>
         <div>
@@ -154,7 +158,7 @@
 
 </div>
 
-<div class="home" id="SafeGreen" style="display: none;">
+<div class="home py-4 px-4" id="SafeGreen" style="display: none;">
         <h2 class="mt-0 mb-4 text-primary">SCAMSHIELD</h2>
         <h2 class="mt-2 mb-2 text-success">THIS MESSAGE IS SAFE</h2>
         <div>
@@ -177,10 +181,11 @@
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
     </div>
 </div>
-
+</div>
     <script src="js/index.js"></script>
     </body>
 </html>
