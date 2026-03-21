@@ -1,21 +1,33 @@
-import Tesseract from "tesseract.js";
-import Logger from "../utils/logger.js";
+import axios from "axios";
+import FormData from "form-data";
 
-const logger = new Logger("OCRService");
-
-export const extractTextFromImage = async (image) => {
+export const extractTextFromImage = async (imageBuffer) => {
   try {
-    const result = await Tesseract.recognize(image, "eng", {
-      logger: (m) => logger.info(m),
+    const formData = new FormData();
+
+    formData.append("file", imageBuffer, {
+      filename: "image.png",
+      contentType: "image/png",
     });
 
-    const text = result.data.text;
+    formData.append("apikey", process.env.OCR_API_KEY);
+    formData.append("language", "eng");
 
-    logger.info("Extracted text:", text);
+    const response = await axios.post(
+      "https://api.ocr.space/parse/image",
+      formData,
+      {
+        headers: formData.getHeaders(),
+      }
+    );
 
-    return text;
+    const parsedText =
+      response.data?.ParsedResults?.[0]?.ParsedText || "";
+
+    return parsedText;
+
   } catch (error) {
-    logger.error("OCR Error:", error);
-    throw new Error("Failed to extract text from image");
+    console.error("OCR API Error:", error.response?.data || error.message);
+    throw new Error("OCR failed");
   }
 };
