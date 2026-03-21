@@ -31,3 +31,11 @@ By combining AI-driven analysis with a human-centric design, ScamShield empowers
 ### 🎯 Vision
 
 To create a safer digital environment where vulnerable users, especially senior citizens, can communicate freely without the constant fear of scams and fraud.
+
+---
+
+### 🚨 The problem
+
+With golbal scam lossess exceeding $442 billion and 86% of crypto-fraud victims are over 60, elders need a platform which is simple, visual way to verify suspicious messages.
+
+Source: GASA Global State of Scams Report; FBI IC3 Crypto Assets Report; FBI IC3 Internet Crime Report
