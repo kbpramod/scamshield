@@ -2,7 +2,7 @@ name: Deploy Frontend to GitHub Pages
 
 on:
   push:
-    branches: ["olayemi-frontend"]
+    branches: ["master"]
 
 permissions:
   contents: read
