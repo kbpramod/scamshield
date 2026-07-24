@@ -18,6 +18,14 @@ By combining AI-driven analysis with a human-centric design, ScamShield empowers
 
 ---
 
+### Product Requirement Document:
+https://docs.google.com/document/d/1ccsHx8V4IZ9bdzRGdu3C1vHsm15t7UCWU7nhoOs9ppg/edit?usp=drivesdk
+
+### Presentation:
+https://docs.google.com/presentation/d/1r5bwh2WbMLad40nAVDHoGFUhZMRU3GjbWYKTkvdt-BI/edit
+
+---
+
 ### 💡 Key Highlights
 
 * AI-based scam detection from screenshots
